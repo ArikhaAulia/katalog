@@ -1,0 +1,401 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Koleksi Calle de Larache</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff8f5;
+            color: #634b43;
+        }
+
+        header {
+            background-color: #f5dce1;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 32px;
+        }
+
+        .kembali {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #d996a8;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .kembali:hover {
+            background-color: #c47f94;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .judul {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .tabel-container {
+            overflow-x: auto;
+            background-color: white;
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid #f0d8d5;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px;
+        }
+
+        th {
+            background-color: #d996a8;
+            color: white;
+            padding: 15px;
+        }
+
+        td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #f0d8d5;
+        }
+
+        tbody tr:hover {
+            background-color: #fff0f2;
+        }
+
+        .foto-produk {
+            width: 120px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .btn-pilih {
+            background-color: #d996a8;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-pilih:hover {
+            background-color: #c47f94;
+        }
+
+        .form-pesanan {
+            display: none;
+            margin-top: 30px;
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #f0d8d5;
+        }
+
+        .form-pesanan label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .form-pesanan input,
+        .form-pesanan select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid #e3b8c2;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .harga {
+            font-weight: bold;
+            color: #bd6e86;
+        }
+
+        .hasil {
+            margin-top: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 25px;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>♡ Calle de Larache ♡</h1>
+        <p>Koleksi baju favoritmu dengan gaya modern dan elegan.</p>
+
+        <a href="index.html" class="kembali">
+            ← Kembali ke Fashion Store
+        </a>
+    </header>
+
+    <main class="container">
+
+        <h2 class="judul">Katalog Baju Calle de Larache</h2>
+
+        <div class="tabel-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Foto Produk</th>
+                        <th>Nama Baju</th>
+                        <th>Deskripsi</th>
+                        <th>Harga</th>
+                        <th>Pilihan</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <img src="4.jpg"
+                                 alt="Calle Basic Tee"
+                                 class="foto-produk">
+                        </td>
+                        <td>Calle Basic Tee</td>
+                        <td>Kaos basic dengan desain minimalis untuk kegiatan sehari-hari.</td>
+                        <td>Rp500.000</td>
+                        <td>
+                            <button class="btn-pilih"
+                                type="button"
+                                data-nama="Calle Basic Tee"
+                                data-harga="85000">
+                                Pilih
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <img src="5.jpg"
+                                 alt="Calle Oversize Tee"
+                                 class="foto-produk">
+                        </td>
+                        <td>Calle delarache X Snsb</td>
+                        <td>Kaos oversize dengan potongan santai dan nyaman dipakai.</td>
+                        <td>Rp799.999</td>
+                        <td>
+                            <button class="btn-pilih"
+                                type="button"
+                                data-nama="Calle Oversize Tee"
+                                data-harga="100000">
+                                Pilih
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <img src="6.jpg"
+                                 alt="Calle Polo Shirt"
+                                 class="foto-produk">
+                        </td>
+                        <td>T-shirt Calle Duck</td>
+                        <td>T-shirt calle duck bergaya kasual yang cocok untuk berbagai kesempatan.</td>
+                        <td>Rp640.000</td>
+                        <td>
+                            <button class="btn-pilih"
+                                type="button"
+                                data-nama="Calle Polo Shirt"
+                                data-harga="120000">
+                                Pilih
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <section class="form-pesanan" id="form-pesanan">
+
+            <h2>♡ Form Pemesanan</h2>
+
+            <form id="form-baju">
+
+                <label for="nama">Nama pembeli</label>
+                <input type="text" id="nama" required>
+
+                <label for="produk">Baju yang dipilih</label>
+                <input type="text" id="produk" readonly>
+
+                <label for="ukuran">Ukuran</label>
+                <select id="ukuran" required>
+                    <option value="">Pilih ukuran</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+
+                <label for="warna">Warna</label>
+                <select id="warna" required>
+                    <option value="">Pilih warna</option>
+                    <option value="Putih">Putih</option>
+                    <option value="Hitam">Hitam</option>
+                    <option value="Pink">Pink</option>
+                    <option value="Cream">Cream</option>
+                </select>
+
+                <label for="jumlah">Jumlah baju</label>
+                <input type="number" id="jumlah"
+                       min="1" max="20" value="1" required>
+
+                <p>Harga satuan: <span class="harga" id="harga">Rp0</span></p>
+
+                <p>Total harga: <span class="harga" id="total">Rp0</span></p>
+
+                <button type="submit" class="btn-pilih">
+                    Buat Ringkasan Pesanan
+                </button>
+
+            </form>
+
+            <div class="hasil" id="hasil-pesanan" aria-live="polite"></div>
+
+        </section>
+
+    </main>
+
+    <script>
+        const tombolPilih = document.querySelectorAll(".btn-pilih");
+        const formPesanan = document.getElementById("form-pesanan");
+        const formBaju = document.getElementById("form-baju");
+
+        const inputNama = document.getElementById("nama");
+        const inputProduk = document.getElementById("produk");
+        const inputUkuran = document.getElementById("ukuran");
+        const inputWarna = document.getElementById("warna");
+        const inputJumlah = document.getElementById("jumlah");
+
+        const hargaElement = document.getElementById("harga");
+        const totalElement = document.getElementById("total");
+        const hasilPesanan = document.getElementById("hasil-pesanan");
+
+        let hargaBaju = 0;
+
+        function rupiah(angka) {
+            return "Rp" + angka.toLocaleString("id-ID");
+        }
+
+        function hitungTotal() {
+            const jumlah = Number(inputJumlah.value);
+            const jumlahValid = Number.isInteger(jumlah) &&
+                jumlah >= 1 && jumlah <= 20 ? jumlah : 1;
+
+            hargaElement.textContent = rupiah(hargaBaju);
+            totalElement.textContent = rupiah(hargaBaju * jumlahValid);
+        }
+
+        tombolPilih.forEach(function (tombol) {
+            tombol.addEventListener("click", function () {
+                hargaBaju = Number(tombol.dataset.harga);
+                inputProduk.value = tombol.dataset.nama;
+
+                formPesanan.style.display = "block";
+                hasilPesanan.replaceChildren();
+
+                hitungTotal();
+
+                formPesanan.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            });
+        });
+
+        inputJumlah.addEventListener("input", hitungTotal);
+
+        formBaju.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const nama = inputNama.value.trim();
+            const jumlah = Number(inputJumlah.value);
+
+            if (!nama) {
+                alert("Nama pembeli harus diisi!");
+                return;
+            }
+
+            if (!Number.isInteger(jumlah) || jumlah < 1 || jumlah > 20) {
+                alert("Jumlah baju harus antara 1 sampai 20!");
+                return;
+            }
+
+            const detail = document.createElement("div");
+            detail.style.background = "#fff0f2";
+            detail.style.padding = "15px";
+            detail.style.borderRadius = "12px";
+
+            const judul = document.createElement("h3");
+            judul.textContent = "♡ Ringkasan Pesanan";
+            detail.appendChild(judul);
+
+            [
+                "Nama pembeli: " + nama,
+                "Baju pilihan: " + inputProduk.value,
+                "Ukuran: " + inputUkuran.value,
+                "Warna: " + inputWarna.value,
+                "Jumlah: " + jumlah + " pcs",
+                "Total harga: " + rupiah(hargaBaju * jumlah)
+            ].forEach(function (teks) {
+                const p = document.createElement("p");
+                p.textContent = teks;
+                detail.appendChild(p);
+            });
+
+            const catatan = document.createElement("small");
+            catatan.textContent =
+                "Ini simulasi pesanan, belum merupakan transaksi nyata.";
+
+            detail.appendChild(catatan);
+
+            hasilPesanan.replaceChildren(detail);
+
+            hasilPesanan.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    </script>
+
+</body>
+</html>
+```

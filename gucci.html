@@ -1,0 +1,807 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Koleksi Gucci</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f6ef;
+            color: #243b2d;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #173d2b;
+            color: #f5e6b8;
+            text-align: center;
+            padding: 30px 15px;
+            border-bottom: 4px solid #b49a58;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 36px;
+            letter-spacing: 4px;
+        }
+
+        header p {
+            color: #ffffff;
+        }
+
+        /* TOMBOL KEMBALI */
+
+        .kembali {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 11px 20px;
+            background: #f5f1e8;
+            color: #173d2b;
+            text-decoration: none;
+            border: 1px solid #b49a58;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .kembali:hover {
+            background: #b49a58;
+            color: white;
+        }
+
+        /* KONTEN */
+
+        .container {
+            max-width: 1200px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .judul {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #173d2b;
+            letter-spacing: 2px;
+        }
+
+        .subjudul {
+            text-align: center;
+            line-height: 1.7;
+            color: #6b685b;
+            margin-bottom: 25px;
+        }
+
+        /* TABEL PRODUK */
+
+        .tabel-container {
+            overflow-x: auto;
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #d6c99e;
+            box-shadow: 0 4px 15px rgba(23, 61, 43, 0.08);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 700px;
+        }
+
+        th {
+            background: #173d2b;
+            color: #f5e6b8;
+            padding: 15px;
+            border-bottom: 3px solid #b49a58;
+        }
+
+        td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #e8e1ce;
+        }
+
+        tbody tr {
+            transition: 0.2s;
+        }
+
+        tbody tr:hover {
+            background: #f5f1e8;
+        }
+
+        .foto-produk {
+            width: 120px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #e1d6b8;
+        }
+
+        .harga {
+            font-weight: bold;
+            color: #94752e;
+            white-space: nowrap;
+        }
+
+        /* TOMBOL PILIH */
+
+        .btn-pilih {
+            background: #173d2b;
+            color: #f5e6b8;
+            border: 1px solid #b49a58;
+            padding: 10px 16px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-pilih:hover {
+            background: #28563e;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* FORM PESANAN */
+
+        .form-pesanan {
+            display: none;
+            margin-top: 35px;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #c7b477;
+            box-shadow: 0 5px 18px rgba(23, 61, 43, 0.10);
+            scroll-margin-top: 20px;
+        }
+
+        .form-pesanan h2 {
+            text-align: center;
+            color: #173d2b;
+            letter-spacing: 1px;
+        }
+
+        .form-pesanan label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #243b2d;
+        }
+
+        .form-pesanan input,
+        .form-pesanan select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid #d6c99e;
+            border-radius: 8px;
+            font-size: 15px;
+            background: #fffdf8;
+            color: #243b2d;
+        }
+
+        .form-pesanan input:focus,
+        .form-pesanan select:focus {
+            outline: 2px solid #b49a58;
+        }
+
+        /* TOTAL HARGA */
+
+        .total-box {
+            background: #f5f1e8;
+            border: 1px solid #e1d6b8;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .total-box p {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        /* TOMBOL PESAN */
+
+        .btn-pesan {
+            width: 100%;
+            margin-top: 15px;
+            padding: 13px;
+            background: #173d2b;
+            color: #f5e6b8;
+            border: 1px solid #b49a58;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-pesan:hover {
+            background: #28563e;
+            color: white;
+        }
+
+        /* HASIL PESANAN */
+
+        .hasil {
+            margin-top: 25px;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+            scroll-margin-top: 20px;
+        }
+
+        .hasil:empty {
+            display: none;
+        }
+
+        .ringkasan {
+            background: #f5f1e8;
+            color: #243b2d;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #c7b477;
+        }
+
+        .ringkasan h3 {
+            color: #173d2b;
+            border-bottom: 1px solid #d6c99e;
+            padding-bottom: 10px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 40px;
+            padding: 22px 15px;
+            text-align: center;
+            background: #173d2b;
+            color: #f5e6b8;
+            border-top: 3px solid #b49a58;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 27px;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+
+            .tabel-container {
+                padding: 8px;
+            }
+
+            .form-pesanan {
+                padding: 18px;
+            }
+
+            .foto-produk {
+                width: 90px;
+                height: 110px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <h1>GUCCI</h1>
+        <p>Timeless Style, Iconic Elegance.</p>
+
+        <a href="index.html" class="kembali">
+            ← Kembali ke Fashion Store
+        </a>
+    </header>
+
+
+    <!-- KATALOG -->
+
+    <main class="container">
+
+        <h2 class="judul">GUCCI COLLECTION</h2>
+
+        <p class="subjudul">
+            Discover your style with our selected fashion collection.
+            <br>
+            Pilih koleksi favoritmu dan buat pesananmu di sini.
+        </p>
+
+
+        <div class="tabel-container">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Foto Produk</th>
+                        <th>Nama Produk</th>
+                        <th>Deskripsi</th>
+                        <th>Harga</th>
+                        <th>Pilihan</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <!-- PRODUK 1 -->
+
+                    <tr>
+                        <td>1</td>
+
+                        <td>
+                            <img
+                                src="8.jpg"
+                                alt="Gucci Logo T-Shirt"
+                                class="foto-produk"
+                            >
+                        </td>
+
+                        <td>Gucci Logo T-Shirt</td>
+
+                        <td>
+                            Kaos dengan desain logo klasik
+                            untuk tampilan kasual yang elegan.
+                        </td>
+
+                        <td class="harga">Rp850.000</td>
+
+                        <td>
+                            <button
+                                class="btn-pilih"
+                                type="button"
+                                data-nama="Gucci Logo T-Shirt"
+                                data-harga="850000"
+                            >
+                                Pilih
+                            </button>
+                        </td>
+                    </tr>
+
+
+                    <!-- PRODUK 2 -->
+
+                    <tr>
+                        <td>2</td>
+
+                        <td>
+                            <img
+                                src="9.jpg"
+                                alt="Gucci Oversize T-Shirt"
+                                class="foto-produk"
+                            >
+                        </td>
+
+                        <td>Gucci Oversize T-Shirt</td>
+
+                        <td>
+                            Kaos berpotongan longgar dengan
+                            gaya modern dan nyaman dipakai.
+                        </td>
+
+                        <td class="harga">Rp1.200.000</td>
+
+                        <td>
+                            <button
+                                class="btn-pilih"
+                                type="button"
+                                data-nama="Gucci Oversize T-Shirt"
+                                data-harga="1200000"
+                            >
+                                Pilih
+                            </button>
+                        </td>
+                    </tr>
+
+
+                    <!-- PRODUK 3 -->
+
+                    <tr>
+                        <td>3</td>
+
+                        <td>
+                            <img
+                                src="gucci3.jpg"
+                                alt="Gucci Polo Shirt"
+                                class="foto-produk"
+                            >
+                        </td>
+
+                        <td>Gucci Polo Shirt</td>
+
+                        <td>
+                            Polo shirt bergaya klasik yang cocok
+                            untuk tampilan rapi dan kasual.
+                        </td>
+
+                        <td class="harga">Rp1.500.000</td>
+
+                        <td>
+                            <button
+                                class="btn-pilih"
+                                type="button"
+                                data-nama="Gucci Polo Shirt"
+                                data-harga="1500000"
+                            >
+                                Pilih
+                            </button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
+
+        <!-- FORM PEMESANAN -->
+
+        <section class="form-pesanan" id="form-pesanan">
+
+            <h2>GUCCI — ORDER FORM</h2>
+
+            <p style="text-align:center; color:#777;">
+                Lengkapi detail pesananmu di bawah ini.
+            </p>
+
+            <form id="form-baju">
+
+                <label for="nama">
+                    Nama pembeli
+                </label>
+
+                <input
+                    type="text"
+                    id="nama"
+                    placeholder="Masukkan nama kamu"
+                    required
+                >
+
+
+                <label for="produk">
+                    Produk yang dipilih
+                </label>
+
+                <input
+                    type="text"
+                    id="produk"
+                    readonly
+                    required
+                >
+
+
+                <label for="ukuran">
+                    Ukuran
+                </label>
+
+                <select id="ukuran" required>
+                    <option value="">Pilih ukuran</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+
+
+                <label for="warna">
+                    Warna
+                </label>
+
+                <select id="warna" required>
+                    <option value="">Pilih warna</option>
+                    <option value="Putih">Putih</option>
+                    <option value="Hitam">Hitam</option>
+                    <option value="Hijau">Hijau</option>
+                    <option value="Merah">Merah</option>
+                    <option value="Cream">Cream</option>
+                </select>
+
+
+                <label for="jumlah">
+                    Jumlah baju
+                </label>
+
+                <input
+                    type="number"
+                    id="jumlah"
+                    min="1"
+                    max="20"
+                    value="1"
+                    required
+                >
+
+
+                <!-- TOTAL HARGA -->
+
+                <div class="total-box">
+
+                    <p>
+                        <span>Harga satuan</span>
+                        <strong id="harga">Rp0</strong>
+                    </p>
+
+                    <p>
+                        <span>Jumlah</span>
+                        <strong id="jumlah-tampil">1 pcs</strong>
+                    </p>
+
+                    <hr>
+
+                    <p>
+                        <strong>Total harga</strong>
+                        <strong id="total">Rp0</strong>
+                    </p>
+
+                </div>
+
+
+                <button type="submit" class="btn-pesan">
+                    Buat Ringkasan Pesanan
+                </button>
+
+            </form>
+
+
+            <!-- HASIL PESANAN -->
+
+            <div
+                class="hasil"
+                id="hasil-pesanan"
+                aria-live="polite"
+            ></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>GUCCI COLLECTION</p>
+        <small>Fashion Catalog Project</small>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const tombolPilih =
+                document.querySelectorAll(".btn-pilih");
+
+            const formPesanan =
+                document.getElementById("form-pesanan");
+
+            const formBaju =
+                document.getElementById("form-baju");
+
+            const inputNama =
+                document.getElementById("nama");
+
+            const inputProduk =
+                document.getElementById("produk");
+
+            const inputUkuran =
+                document.getElementById("ukuran");
+
+            const inputWarna =
+                document.getElementById("warna");
+
+            const inputJumlah =
+                document.getElementById("jumlah");
+
+            const hargaElement =
+                document.getElementById("harga");
+
+            const totalElement =
+                document.getElementById("total");
+
+            const jumlahTampil =
+                document.getElementById("jumlah-tampil");
+
+            const hasilPesanan =
+                document.getElementById("hasil-pesanan");
+
+
+            let hargaBaju = 0;
+
+
+            // FORMAT RUPIAH
+
+            function rupiah(angka) {
+                return "Rp" + angka.toLocaleString("id-ID");
+            }
+
+
+            // HITUNG TOTAL HARGA
+
+            function hitungTotal() {
+
+                const jumlah = Number(inputJumlah.value);
+
+                const jumlahValid =
+                    Number.isInteger(jumlah) &&
+                    jumlah >= 1 &&
+                    jumlah <= 20
+                        ? jumlah
+                        : 1;
+
+                hargaElement.textContent =
+                    rupiah(hargaBaju);
+
+                totalElement.textContent =
+                    rupiah(hargaBaju * jumlahValid);
+
+                jumlahTampil.textContent =
+                    jumlahValid + " pcs";
+            }
+
+
+            // PILIH PRODUK
+
+            tombolPilih.forEach(function (tombol) {
+
+                tombol.addEventListener("click", function () {
+
+                    const namaProduk = tombol.dataset.nama;
+                    const hargaProduk = Number(tombol.dataset.harga);
+
+                    if (
+                        !namaProduk ||
+                        !Number.isFinite(hargaProduk) ||
+                        hargaProduk <= 0
+                    ) {
+                        alert("Data produk tidak valid!");
+                        return;
+                    }
+
+                    hargaBaju = hargaProduk;
+                    inputProduk.value = namaProduk;
+
+                    formPesanan.style.display = "block";
+
+                    hasilPesanan.replaceChildren();
+
+                    hitungTotal();
+
+                    formPesanan.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                });
+
+            });
+
+
+            // PERBARUI TOTAL SAAT JUMLAH BERUBAH
+
+            inputJumlah.addEventListener("input", hitungTotal);
+
+
+            // KIRIM FORM PEMESANAN
+
+            formBaju.addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+                if (hargaBaju <= 0) {
+                    alert("Pilih produk terlebih dahulu!");
+                    return;
+                }
+
+                const nama = inputNama.value.trim();
+                const jumlah = Number(inputJumlah.value);
+
+                if (!nama) {
+                    alert("Nama pembeli harus diisi!");
+                    inputNama.focus();
+                    return;
+                }
+
+                if (
+                    !Number.isInteger(jumlah) ||
+                    jumlah < 1 ||
+                    jumlah > 20
+                ) {
+                    alert("Jumlah baju harus antara 1 sampai 20!");
+                    inputJumlah.focus();
+                    return;
+                }
+
+                if (!inputUkuran.value || !inputWarna.value) {
+                    alert("Pilih ukuran dan warna terlebih dahulu!");
+                    return;
+                }
+
+                const ukuran = inputUkuran.value;
+                const warna = inputWarna.value;
+                const total = hargaBaju * jumlah;
+
+
+                // MEMBUAT KOTAK RINGKASAN
+
+                const kotak = document.createElement("div");
+
+                kotak.className = "ringkasan";
+
+
+                const judul = document.createElement("h3");
+
+                judul.textContent = "GUCCI — Order Summary";
+
+                kotak.appendChild(judul);
+
+
+                // DETAIL PESANAN
+
+                const detail = [
+                    "Nama pembeli: " + nama,
+                    "Produk: " + inputProduk.value,
+                    "Ukuran: " + ukuran,
+                    "Warna: " + warna,
+                    "Jumlah: " + jumlah + " pcs",
+                    "Harga satuan: " + rupiah(hargaBaju),
+                    "Total harga: " + rupiah(total)
+                ];
+
+
+                detail.forEach(function (teks) {
+
+                    const paragraf = document.createElement("p");
+
+                    paragraf.textContent = teks;
+
+                    kotak.appendChild(paragraf);
+
+                });
+
+
+                // CATATAN
+
+                const catatan = document.createElement("small");
+
+                catatan.textContent =
+                    "Catatan: Ini merupakan simulasi pesanan, bukan transaksi nyata.";
+
+                kotak.appendChild(catatan);
+
+
+                // TAMPILKAN RINGKASAN
+
+                hasilPesanan.replaceChildren(kotak);
+
+                hasilPesanan.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>
+```

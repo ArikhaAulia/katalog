@@ -1,0 +1,604 @@
+css
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff8f5;
+    color: #59483d;
+}
+
+/* HEADER */
+
+header {
+    text-align: center;
+    padding: 35px 15px;
+    background: #f4dce1;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+header p {
+    margin-bottom: 0;
+}
+
+/* KONTEN UTAMA */
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px 15px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* KATALOG BRAND */
+
+.produk-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.produk {
+    background: white;
+    border: 1px solid #f0ded8;
+    border-radius: 15px;
+    padding: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.produk:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px #e8d4ce;
+}
+
+.produk img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.produk h3 {
+    margin-bottom: 8px;
+}
+
+.produk p {
+    margin: 7px 0;
+}
+
+/* TOMBOL */
+
+button {
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 11px 15px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.pilih-btn,
+.lihat-koleksi {
+    background: #d99aaa;
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.pilih-btn:hover,
+.lihat-koleksi:hover {
+    background: #bd7187;
+}
+
+.pesan-btn {
+    background: #bd7187;
+    color: white;
+    width: 100%;
+    font-size: 16px;
+}
+
+.pesan-btn:hover {
+    background: #a85d74;
+}
+
+/* KOLEKSI CALLE */
+
+#koleksi-calle {
+    display: none;
+    margin-top: 40px;
+    padding: 25px;
+    background: #fff0f2;
+    border-radius: 18px;
+    scroll-margin-top: 20px;
+}
+
+.deskripsi-brand {
+    text-align: center;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* TIGA PILIHAN BAJU */
+
+.koleksi-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.baju-card {
+    padding: 15px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px #eadbd5;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.baju-card:hover {
+    transform: translateY(-5px);
+}
+
+.baju-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.baju-card h3 {
+    margin-bottom: 8px;
+}
+
+.baju-card p {
+    line-height: 1.6;
+}
+
+.baju-card .harga {
+    color: #bd7187;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.baju-card .deskripsi {
+    font-size: 14px;
+    min-height: 90px;
+}
+
+.baju-card button {
+    width: 100%;
+    background: #bd7187;
+    color: white;
+}
+
+.baju-card button:hover {
+    background: #a85d74;
+}
+
+/* FORM PILIHAN BAJU */
+
+#form-pilihan {
+    display: none;
+    max-width: 550px;
+    margin: 40px auto 0;
+    padding: 25px;
+    background: white;
+    border: 1px solid #f0ded8;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px #eadbd5;
+    scroll-margin-top: 20px;
+}
+
+#form-pilihan h2 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e4cbc7;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #fffdfc;
+    color: #59483d;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #d99aaa;
+}
+
+/* TOTAL HARGA */
+
+.total-box {
+    background: #fff0f2;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.total-box p {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.total-box h3 {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 0;
+}
+
+/* HASIL PESANAN */
+
+#hasil-pesanan {
+    margin-top: 20px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+#hasil-pesanan:empty {
+    display: none;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    background: #f4dce1;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+    .produk-container,
+    .koleksi-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .produk img,
+    .baju-card img {
+        height: 160px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    #koleksi-calle {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 450px) {
+    .produk-container,
+    .koleksi-container {
+        grid-template-columns: 1fr;
+    }
+
+    .produk img,
+    .baju-card img {
+        height: 220px;
+    }
+}
+
+/* Tombol Calle de Larache */
+.lihat-koleksi {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px;
+    background-color: #d996a8;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lihat-koleksi:hover {
+    background-color: #c47f94;
+}
+css
+/* ===================================
+   TOMBOL LIHAT KOLEKSI GUCCI
+=================================== */
+
+.lihat-koleksi-gucci {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px;
+    background-color: #173d2b;
+    color: #f5e6b8;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #b49a58;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lihat-koleksi-gucci:hover {
+    background-color: #28563e;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* ===================================
+   BAGIAN KOLEKSI GUCCI
+=================================== */
+
+#koleksi-gucci {
+    display: none;
+    margin-top: 40px;
+    padding: 25px;
+    background: #f5f1e8;
+    color: #243b2d;
+    border: 1px solid #c7b477;
+    border-radius: 18px;
+    scroll-margin-top: 20px;
+}
+
+#koleksi-gucci h2 {
+    color: #173d2b;
+    letter-spacing: 2px;
+}
+
+#koleksi-gucci .deskripsi-brand {
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #5d5a4d;
+}
+
+
+/* ===================================
+   KARTU PRODUK GUCCI
+=================================== */
+
+.koleksi-gucci-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.baju-card-gucci {
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid #d6c99e;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(23, 61, 43, 0.10);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.baju-card-gucci:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(23, 61, 43, 0.18);
+}
+
+.baju-card-gucci img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.baju-card-gucci h3 {
+    margin-bottom: 8px;
+    color: #173d2b;
+}
+
+.baju-card-gucci p {
+    line-height: 1.6;
+    color: #625f52;
+}
+
+.baju-card-gucci .harga {
+    color: #9a7830;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.baju-card-gucci .deskripsi {
+    font-size: 14px;
+    min-height: 90px;
+}
+
+
+/* ===================================
+   TOMBOL PILIH BAJU GUCCI
+=================================== */
+
+.pilih-baju-gucci {
+    width: 100%;
+    padding: 12px;
+    background: #173d2b;
+    color: #f5e6b8;
+    border: 1px solid #b49a58;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pilih-baju-gucci:hover {
+    background: #28563e;
+    color: white;
+}
+
+
+/* ===================================
+   FORM PEMESANAN GUCCI
+=================================== */
+
+#form-pilihan-gucci {
+    display: none;
+    max-width: 550px;
+    margin: 40px auto 0;
+    padding: 25px;
+    background: #ffffff;
+    color: #243b2d;
+    border: 1px solid #c7b477;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(23, 61, 43, 0.12);
+    scroll-margin-top: 20px;
+}
+
+#form-pilihan-gucci h2 {
+    color: #173d2b;
+    letter-spacing: 1px;
+    margin-top: 0;
+}
+
+#form-pilihan-gucci label {
+    display: block;
+    margin: 15px 0 7px;
+    color: #243b2d;
+    font-weight: bold;
+}
+
+#form-pilihan-gucci input,
+#form-pilihan-gucci select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d6c99e;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #fffdf8;
+    color: #243b2d;
+}
+
+#form-pilihan-gucci input:focus,
+#form-pilihan-gucci select:focus {
+    outline: 2px solid #b49a58;
+}
+
+
+/* ===================================
+   TOTAL HARGA GUCCI
+=================================== */
+
+#form-pilihan-gucci .total-box {
+    background: #f5f1e8;
+    border: 1px solid #e1d6b8;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+#form-pilihan-gucci .total-box p {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#form-pilihan-gucci .total-box h3 {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: #173d2b;
+}
+
+
+/* ===================================
+   TOMBOL PESAN GUCCI
+=================================== */
+
+#form-pilihan-gucci .pesan-btn {
+    width: 100%;
+    padding: 13px;
+    background: #173d2b;
+    color: #f5e6b8;
+    border: 1px solid #b49a58;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#form-pilihan-gucci .pesan-btn:hover {
+    background: #28563e;
+    color: white;
+}
+
+
+/* ===================================
+   HASIL PESANAN GUCCI
+=================================== */
+
+#hasil-pesanan-gucci {
+    margin-top: 20px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+    scroll-margin-top: 20px;
+}
+
+#hasil-pesanan-gucci:empty {
+    display: none;
+}
+
+
+/* ===================================
+   RESPONSIVE GUCCI
+=================================== */
+
+@media (max-width: 700px) {
+    .koleksi-gucci-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .baju-card-gucci img {
+        height: 160px;
+    }
+
+    #koleksi-gucci {
+        padding: 15px;
+    }
+
+    #form-pilihan-gucci {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 450px) {
+    .koleksi-gucci-container {
+        grid-template-columns: 1fr;
+    }
+
+    .baju-card-gucci img {
+        height: 220px;
+    }
+}
